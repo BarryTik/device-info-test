@@ -1,4 +1,8 @@
 
 console.log(navigator);
 
-document.getElementById("navigator").innerHTML = JSON.stringify(navigator.platform);
+var toInsert = {
+    platform: navigator.platform,
+    userAgent: navigator.userAgent
+}
+document.getElementById("navigator").innerHTML = JSON.stringify(toInsert);
