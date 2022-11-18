@@ -1,8 +1,11 @@
 
-console.log(navigator);
+var navKeys = Object.keys(Object.getPrototypeOf(navigator));
 
-var toInsert = {
-    platform: navigator.platform,
-    userAgent: navigator.userAgent
-}
-document.getElementById("navigator").innerHTML = JSON.stringify(toInsert);
+var div = document.getElementById("navigator")
+navKeys.forEach(key => {
+    let p = document.createElement("p");
+    p.innerHTML = `${key}: ${JSON.stringify(navigator[key])}`;
+    div.append(p);
+});
+
+
